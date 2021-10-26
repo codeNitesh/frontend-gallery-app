@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Gallery } from '../models/Gallery';
+import { Gallery } from '../models/gallery';
 import {GalleryService} from '../services/gallery.service'
 @Component({
   selector: 'app-home-gallery',

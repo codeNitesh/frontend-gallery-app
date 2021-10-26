@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Gallery } from '../models/Gallery';
+import { Gallery } from '../models/gallery';
 import { GalleryService } from '../services/gallery.service';
 
 @Component({
