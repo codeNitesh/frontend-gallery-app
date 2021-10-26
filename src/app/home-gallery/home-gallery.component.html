@@ -1,0 +1,27 @@
+<section>
+    <div class="d-flex justify-content-between text-align-center mb-3">
+        <h3 class="pb-3">All Images</h3>
+        <button (click)="AddNew()" class="btn btn-primary">Add New Image</button>
+    </div>
+    
+    
+    <div class="container text-center">
+        <input [(ngModel)]="term" type="text" class="custom-input m-3" placeholder="Search" aria-label="search" aria-describedby="addon-wrapping">
+        <div *ngIf="images.length==0" class="alert alert-info" role="alert">
+            No Images Found!
+        </div>        
+        <div *ngIf="images.length!=0" class="row g-4">
+            <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+            <div class="col-4 card pt-2" *ngFor="let image of images | filter:term | paginate: { itemsPerPage: 9, currentPage: p }">
+                    <img [src]="image.imgURL" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{image.imgName}}</h5>
+                      <p class="card-text">{{image.imgDetails}}</p>
+                      <button class="btn btn-primary" (click)="showDetails(image.imgId)">Update</button>
+                    </div>
+            </div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+        </div>
+    </div>
+</section>

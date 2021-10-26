@@ -1,0 +1,9 @@
+.navbar{
+    height: 50px;
+    padding: 10px 20px;
+}
+
+.main{
+    padding: 30px;
+    height: calc(100vh - 50px);
+}
